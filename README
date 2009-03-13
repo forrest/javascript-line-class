@@ -31,8 +31,17 @@ Line class:
     returns [x2,y2]
 
 
-Installation:
+Installation
+---------------
 
 1) copy and link the lines.js file
 
 2) copy the /images/line_images folder into your project. Set the LINE_PATH variable.
+
+3) You will have to add the style ".line {position:absolute} " to your css. 
+
+
+Testing
+--------------
+
+THis has been tested in FF3 and IE7. It should wor
