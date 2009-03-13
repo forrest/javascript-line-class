@@ -1,0 +1,38 @@
+JavaScript Line Drawer
+=========================
+
+This is a javascript library used to draw lines on the screen easily and efficiently. 
+The method is taken from a demo found on http://www.p01.org/releases/Drawing_lines_in_JavaScript/ (I believe it was written by Mathieu 'P01' HENRI)
+I turned it into a Prototype class, with some useful functions. This project includes a simple demo in index.html.
+
+There is a demo at http://lines.live2code.ca
+or you can check out the code at <github coming soon>
+
+
+Line class:
+  initialize(x1,y1,x2,y2)
+  
+    line1 = new Line(x1,y1,x2,y2);
+  
+  update(Ax,Ay,Bx,By)
+  
+    line1.update((x1,y1,x2,y2))
+  
+  destroy()
+  
+    line1.destroy()
+  
+  start()
+  
+    returns [x1,y1]
+  
+  stop()
+  
+    returns [x2,y2]
+
+
+Installation:
+
+1) copy and link the lines.js file
+
+2) copy the /images/line_images folder into your project. Set the LINE_PATH variable.

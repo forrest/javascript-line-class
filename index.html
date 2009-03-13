@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+  <script src="javascripts/prototype.js" type="text/javascript" charset="utf-8"></script>
+  <script src="javascripts/lines.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<style>
+  body {background-color:#ccccff};
+</style>
+
+
+<script type="text/javascript">
+  var lines = [];
+  var mouseX=0, 
+      mouseY=0;
+  function mousemove( evt )
+  {
+  	if( !evt )
+  		evt = event
+
+  	mouseX = evt.clientX
+  	mouseY = evt.clientY
+  }
+  document.onmousemove	= mousemove
+
+  function updateLine()
+  {
+    if(lines.length==0)
+    {
+      lines[0] = new Line(mouseX,mouseY,mouseX,mouseY);
+      return
+    }
+    
+    lastLine = lines[lines.length-1];
+    lines[lines.length] = new Line(lastLine.stop()[0],lastLine.stop()[1],mouseX,mouseY);
+    
+    if(lines.length>10)
+    {
+      lines[0].destroy();
+      lines = lines.without(lines[0])
+    }
+  }
+
+  setInterval( updateLine, 25)
+</script>
+</body>
+</html>
